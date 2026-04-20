@@ -1,0 +1,100 @@
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!-- Copyright (C) 2026 Alizerin Labs — https://alizerinlabs.com -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>How to Hijack an AI Agent — CivAI</title>
+<meta name="viewport" content="width=1440" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ======================= LANDING ======================= -->
+<div id="view-landing">
+  <div class="landing-col">
+    <div class="t-eyebrow eyebrow">AN INTERACTIVE DEMO</div>
+    <h1 class="t-display">How to Hijack an AI Agent</h1>
+    <p class="t-subtitle sub">Two ways an AI agent can be tricked into working against its user. See first hand just how easy it can be.</p>
+
+    <div class="card-row">
+      <button class="scenario-card" data-scenario="website-injection">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="t-card-title ctitle">The Biased Review</div>
+        <div class="hook">A shopping agent reads a review page. The page reads the agent back.</div>
+      </button>
+      <button class="scenario-card" data-scenario="mcp-poisoning">
+        <div class="icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="t-card-title ctitle">The Helpful Weather Tool</div>
+        <div class="hook">A developer installs a weather tool. Weeks later, his API keys leave the building.</div>
+      </button>
+    </div>
+
+    <div class="footer-micro">Scripted demo. No live LLM calls.</div>
+  </div>
+</div>
+
+<!-- ======================= PLAYER ======================= -->
+<div id="view-player">
+  <div class="topbar">
+    <div class="left">
+      <button class="ghost-btn" id="btn-back-scenarios" title="Back to scenarios (Esc)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        Back to scenarios
+      </button>
+    </div>
+    <div class="center" id="scenario-title"></div>
+    <div class="right">
+      <button class="ghost-btn icon-btn" id="btn-restart" title="Restart scenario (R)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="stage-wrap" id="stage-wrap">
+    <div class="stages" id="stages">
+      <div class="stage" id="stage-left">
+        <div class="stage-inner" id="stage-left-inner"></div>
+      </div>
+      <div class="stage" id="stage-right">
+        <div class="stage-inner" id="stage-right-inner"></div>
+      </div>
+    </div>
+    <div class="caption-area" id="caption-area">
+      <div class="caption" id="caption"></div>
+    </div>
+  </div>
+
+  <div class="control-bar">
+    <div class="control-left">
+      <button class="btn" id="btn-prev">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        Back
+      </button>
+    </div>
+    <div class="control-center">
+      <div class="t-step" id="step-counter">STEP 1 / 6</div>
+      <div class="dots" id="dots"></div>
+    </div>
+    <div class="control-right">
+      <button class="btn primary" id="btn-next">
+        Next
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="scenario-data.js"></script>
+<script src="stages.js"></script>
+<script src="player.js"></script>
+
+</body>
+</html>
