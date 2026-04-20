@@ -4,7 +4,7 @@ An interactive demonstration of prompt injection.  These are the class of attack
 
 **Live demo:** [hijacked.alizerinlabs.com](https://hijacked.alizerinlabs.com)
 
-> **This is a scripted, hypothetical demo. No live LLM calls are made.** The agent traces shown are pre-authored to illustrate realistic failure modes documented in the research literature — they are not live model outputs.
+> **This is a scripted, hypothetical demo. No live LLM calls are made.** The agent traces shown are pre-authored to illustrate possible failure modes. They are not live model outputs.
 
 ---
 
